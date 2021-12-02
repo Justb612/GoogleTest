@@ -20,7 +20,10 @@ const cardImages = [
 ];
 
 function App() {
-  ReactGA.pageview(window.location.pathname);
+  useEffect(() => {
+    ReactGA.initialize("UA-214143913-1");
+    ReactGA.pageview("/");
+  }, []);
 
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
