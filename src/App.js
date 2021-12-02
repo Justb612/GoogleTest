@@ -1,4 +1,5 @@
 import "./App.css";
+import ReactGA from "react-ga";
 import { useState, useEffect } from "react";
 import ekkoImg from "./img/EkkoSquare.png";
 import luxImg from "./img/LuxSquare.png";
@@ -19,6 +20,8 @@ const cardImages = [
 ];
 
 function App() {
+  ReactGA.pageview(window.location.pathname);
+
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
